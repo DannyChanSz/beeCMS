@@ -1,0 +1,30 @@
+{
+  "name": "beecms-server",
+  "version": "1.0.0",
+  "description": "server for beeCms",
+  "main": "app.js",
+  "scripts": {
+    "test": "mktest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DannyChanSz/beeCMS.git"
+  },
+  "keywords": [
+    "restify",
+    "node.js",
+    "CMS"
+  ],
+  "author": "DannyChan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DannyChanSz/beeCMS/issues"
+  },
+  "homepage": "https://github.com/DannyChanSz/beeCMS#readme",
+  "dependencies": {
+    "async": "^1.5.2",
+    "crypto": "0.0.3",
+    "mongojs": "^2.3.0",
+    "underscore": "^1.8.3"
+  }
+}

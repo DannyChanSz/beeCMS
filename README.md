@@ -1,2 +1,2 @@
-# beeCMS-server
-BeeCMS 服务端
+# beeCMS
+A CMS

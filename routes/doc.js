@@ -8,13 +8,25 @@ var docCtrl = require('../controllers/docCtrl.js');
  */
 module.exports = function(server) {
 
-	var PATH='/doc';
-	server.get({
+    var PATH = '/doc';    
+
+    server.post({
+        path: PATH + '/',
+        version: '0.0.1'
+    }, docCtrl.create);    
+
+    server.put({
+        path: PATH + '/:id',
+        version: '0.0.1'
+    }, docCtrl.update);
+
+    server.get({
         path: PATH + '/',
         version: '0.0.1'
     }, docCtrl.findAll);
-server.post({
-        path: PATH + '/',
+
+    server.get({
+        path: PATH + '/:id',
         version: '0.0.1'
-    }, docCtrl.create);
+    }, docCtrl.findById);
 }

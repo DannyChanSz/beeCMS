@@ -8,22 +8,21 @@ var docModel = require('../models/context.js').doc();
  * 文章管理
  * @type {Object}
  */
-module.exports = {    
+module.exports = {
     create: function(req, res, done) {
         var entity = req.params;
-        entity.createdOn=Date.now();
+        entity.createdOn = Date.now();
         docModel.create(entity, function(result) {
             res.json(result);
             res.end();
         });
     },
-    update: function(req, res, done) {
+    updateById: function(req, res, done) {
         var entity = req.params;
-        var id=req.params.id;
-        console.log(entity);
+        var id = req.params.id;
         delete entity.id;
-        
-        docModel.update(id,entity, function(result) {
+
+        docModel.updateById(id, entity, function(result) {
             res.json(result);
             res.end();
         });
@@ -36,6 +35,14 @@ module.exports = {
     },
     findById: function(req, res, done) {
         docModel.findById(req.params.id, function(result) {
+            res.json(result);
+            res.end();
+        });
+    },
+    removeById: function(req, res, done) {
+        var entity = req.params;
+        var id = req.params.id;
+        docModel.removeById(id, function(result) {
             res.json(result);
             res.end();
         });

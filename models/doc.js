@@ -1,5 +1,6 @@
 var config = require("../config/config.js");
 var _ = require("underscore");
+var help = require("./help.js");
 
 /**
  * 结构
@@ -16,23 +17,12 @@ var entities = config.db.collection("doc");
      * @param  {Function} done    [description]
      * @return {[type]}           [description]
      */
-    this.defaultCall = function(err, success, done) {
-        if (!err) {
-            return done({
-                status: true,
-                data: success
-            });
-        } else {
-            return done({
-                status: false,
-                data: err
-            });
-        }
-    };
+    this.defaultCall = help.defaultCall;
 
 module.exports = {
 
-    update: function(id, entity, done) {
+    updateById: function(id, entity, done) {
+    	
         var _id = config.mongojs.ObjectId(id);
         delete entity.id;
 
